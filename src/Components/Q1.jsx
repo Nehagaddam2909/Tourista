@@ -9,7 +9,7 @@ const Q1 = ({changeValue,mode}) => {
         location?
       </div>
       <div className="flex flex-col" onChange={(e) => changeValue(e)}>
-        <div className="flex space-x-8 cursor-pointer items-center">
+        <div className="flex space-x-8 form-radio cursor-pointer items-center">
           <input
             type="radio"
             id="op1"

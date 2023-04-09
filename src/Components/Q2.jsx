@@ -7,7 +7,7 @@ const Q2 = ({changeV,mode,dist}) => {
       <div className="">
         What is the total distance between your home and workplace?
       </div>
-      <div className="flex flex-col" onChange={(e) => changeV(e)}>
+      <div className="flex flex-col mb-[2rem]" onChange={(e) => changeV(e)}>
         <div className="flex space-x-8 cursor-pointer items-center">
           <input
             type="radio"
@@ -76,7 +76,7 @@ const Q2 = ({changeV,mode,dist}) => {
         </div>
       </div>
      
-      <Link to="/result" state={{mode:mode,distance:dist}}>Generate</Link>
+      <Link to="/result" state={{mode:mode,distance:dist}} className=" p-2 text-white rounded-md my-[2rem]  text-center font-extrabold bg-gradient-to-r from-purple-400 to-pink-600">Generate</Link>
     </div>
   );
 };
