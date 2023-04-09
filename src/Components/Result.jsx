@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import FetchData from "./FetchData";
+
 
 const Result = () => {
     const loc=useLocation()
@@ -8,9 +10,16 @@ const Result = () => {
         alert("Answer all questions...!!!")
         window.location.href="/";
     }
-
+    const dist=loc.state.distance;
+    const mode=loc.state.mode 
+    console.log("data:  lll",dist,mode)
+  
     return ( <div>
-        This is result
+       
+       
+       
+           <FetchData dist={dist} mode={mode}></FetchData>
+        
     </div> );
 }
  

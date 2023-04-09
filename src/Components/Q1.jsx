@@ -1,11 +1,7 @@
 import { useState } from "react";
 import { Link}  from "react-router-dom";
-const Q1 = () => {
-  const [mode, setMode] = useState("Bus");
-  const changeValue = (e) => {
-    setMode(e.target.value);
-    console.log(mode);
-  };
+const Q1 = ({changeValue,mode}) => {
+ 
   return (
     <div className="m-4">
       <div className="">
@@ -20,6 +16,7 @@ const Q1 = () => {
             name="q1"
             className="h-3 w-3 cursor-pointer "
             value="Bus"
+            defaultChecked={mode ==="Bus"}
           ></input>
           <label htmlFor="op1">Bus</label>
         </div>
@@ -30,6 +27,8 @@ const Q1 = () => {
             name="q1"
             className="h-3 w-3 cursor-pointer border"
             value="Metro"
+            defaultChecked={mode ==="Metro"}
+
           ></input>
           <label htmlFor="op2">Metro</label>
         </div>
@@ -86,7 +85,6 @@ const Q1 = () => {
           </label>
         </div>
       </div>
-      <Link to='/q2' state={{mode:mode}}>Submit</Link>
     </div>
   );
 };
