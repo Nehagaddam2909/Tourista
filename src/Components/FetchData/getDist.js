@@ -1,9 +1,9 @@
-import data0 from '../data/sample_db_0km.json';
-import data5 from '../data/sample_db_5km.json';
-import data10 from '../data/sample_db_10km.json';
-import data15 from '../data/sample_db_15km.json';
-import data20 from '../data/sample_db_20km.json';
-import data25 from '../data/sample_db_25km.json';
+import data0 from '../../data/sample_db_0km.json';
+import data5 from '../../data/sample_db_5km.json';
+import data10 from '../../data/sample_db_10km.json';
+import data15 from '../../data/sample_db_15km.json';
+import data20 from '../../data/sample_db_20km.json';
+import data25 from '../../data/sample_db_25km.json';
 export function getDist(dist){
     if(dist==='0')
     {

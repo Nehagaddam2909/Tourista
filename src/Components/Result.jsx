@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import FetchData from "./FetchData";
+import FetchData from "./FetchData/FetchData";
 
 
 const Result = () => {

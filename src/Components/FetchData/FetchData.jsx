@@ -7,11 +7,16 @@ const FetchData = ({ dist, mode }) => {
   let [mode1, setMode] = useState("mode_1");
 
   let crowd_json = {
+    0: "All seats are available",
     1: "Many seats available",
     2: "Some seats available",
     3: "All seats occupied; standing space available",
     4: "Fully crowded or packed",
   };
+  const calculate=(s1,s2)=>{
+    let d= parseInt(s1)+parseInt(s2);
+    return d;
+  }
   let servtype_json = { 1: "Ordinary", 2: "Express Non-AC", 3: "Express AC" };
   useEffect(() => {
     if (dist && mode) {
@@ -44,9 +49,9 @@ const FetchData = ({ dist, mode }) => {
                   <td className="px-2 py-2">
                     Total travel time spent while inside the vehicle(s)
                   </td>
-                  <td className="px-2 py-2">{ele[mode1 + ".ivtt"]}</td>
+                  <td className="px-2 py-2">{ele[mode1 + ".ivtt"]} min</td>
                   {mode === "Bus" && (
-                    <td className="px-2 py-2">{ele["mode_2.ivtt"]}</td>
+                    <td className="px-2 py-2">{ele["mode_2.ivtt"]} min</td>
                   )}
                 </tr>
                 <tr className="border-b">
@@ -54,19 +59,19 @@ const FetchData = ({ dist, mode }) => {
                     Possible delay due to traffic congestion or other
                     uncertainties
                   </td>
-                  <td className="px-2 py-2">{ele[mode1 + ".tvariab"]}</td>
+                  <td className="px-2 py-2">..up to {ele[mode1 + ".tvariab"]} min more</td>
                   {mode === "Bus" && (
-                    <td className="px-2 py-2">{ele["mode_2.tvariab"]}</td>
+                    <td className="px-2 py-2">..up to {ele["mode_2.tvariab"]} min more</td>
                   )}
                 </tr>
                 <tr className="border-b">
                   <td className="px-2 py-2">
                     Extent of crowding in the vehicle
                   </td>
-                  <td className="px-2 py-2">
+                  {ele[mode1 + ".crowd"] !=="0" && <td className="px-2 py-2">
                     {crowd_json[ele[mode1 + ".crowd"]]}
-                  </td>
-                  {mode === "Bus" && (
+                  </td>}
+                  {mode === "Bus" && ele["mode2.crowd"] !=="0"&& (
                     <td className="px-2 py-2">
                       {crowd_json[ele["mode_2.crowd"]]}
                     </td>
@@ -79,15 +84,15 @@ const FetchData = ({ dist, mode }) => {
                       {servtype_json[ele[mode1 + ".serv"]]}
                     </td>
                     {mode === "Bus" && (
-                      <td className="px-2 py-2">{ele["mode_2.serv"]}</td>
+                      <td className="px-2 py-2">{servtype_json[ele["mode_2.serv"]]}</td>
                     )}
                   </tr>
                 )}
                 <tr className="border-b">
                   <td className="px-2 py-2">Total one-way cost of travel</td>
-                  <td className="px-2 py-2">{ele[mode1 + ".tcost"]}</td>
+                  <td className="px-2 py-2">Rs. {ele[mode1 + ".tcost"]}</td>
                   {mode === "Bus" && (
-                    <td className="px-2 py-2">{ele["mode_2.tcost"]}</td>
+                    <td className="px-2 py-2">Rs. {ele["mode_2.tcost"]}</td>
                   )}
                 </tr>
                 <tr className="border-b">
@@ -103,12 +108,12 @@ const FetchData = ({ dist, mode }) => {
                     waittime
                   </td>
                   <td className="px-2 py-2">
-                    {ele[mode1 + ".waittime"]} mins + {ele[mode1 + ".walktime"]}{" "}
-                    mins
+                    {calculate(ele[mode1 + ".waittime"],ele[mode1 + ".walktime"])}
+                     min
                   </td>
                   {mode === "Bus" && (
                     <td className="px-2 py-2">
-                      {ele["mode_2.waittime"]} mins + {ele["mode_2.walktime"]}
+                      {calculate(ele["mode_2.waittime"],ele["mode_2.walktime"])} min
                     </td>
                   )}
                 </tr>
