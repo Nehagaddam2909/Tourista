@@ -3,12 +3,12 @@ import { Link}  from "react-router-dom";
 const Q1 = ({changeValue,mode}) => {
  
   return (
-    <div className="m-4 relative">
-      <div className="">
+    <div className="m-4 relative ease-in transition-all duration-400" >
+      <div className="ease-in transition-all duration-400" >
         What is your most frequently used means of travel from your home to work
         location?
       </div>
-      <div className="flex flex-col" onChange={(e) => changeValue(e)}>
+      <div className="flex flex-col" onChange={(e) => changeValue(e)} name="q1-div" id="q1-div">
         <div className="flex space-x-8 form-radio cursor-pointer items-center">
           <input
             type="radio"

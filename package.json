@@ -9,11 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "i": "^0.3.7",
+    "npm": "^9.6.4",
     "react": "^18.2.0",
     "react-data-table-component": "^7.5.3",
     "react-data-table-component-extensions": "^1.6.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.10.0"
+    "react-router-dom": "^6.10.0",
+    "scroll-to-element": "^2.0.3"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
