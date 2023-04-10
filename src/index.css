@@ -22,4 +22,20 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
+  html,
+body {
+  /* font-family: 'Open Sans', sans-serif; */
+  font-family :'Times New Roman', Times, serif
+}
+.div{
+    color: white;
+    padding: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+     
+}
 }

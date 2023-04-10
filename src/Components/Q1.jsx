@@ -3,7 +3,7 @@ import { Link}  from "react-router-dom";
 const Q1 = ({changeValue,mode}) => {
  
   return (
-    <div className="m-4">
+    <div className="m-4 relative">
       <div className="">
         What is your most frequently used means of travel from your home to work
         location?
@@ -37,7 +37,7 @@ const Q1 = ({changeValue,mode}) => {
             type="radio"
             id="op3"
             name="q1"
-            className="h-3 w-3 cursor-pointer border-8"
+            className="h-3 w-3 accent-pink-500 cursor-pointer border-8"
             value="Own Two-wheeler"
           ></input>
           <label htmlFor="op3" className="">Own Two-wheeler</label>
