@@ -15,7 +15,7 @@ const Result = () => {
     console.log("data:  lll",dist,mode)
   // #eb7434 #cf1b48
 
-    return ( <div className="flex flex-col justify-center">
+    return ( <div className="flex flex-col justify-center mb-[4rem]">
        
         <div className="my-[2rem] uppercase text-center font-extrabold text-transparent text-3xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Result of the Choice</div>
        

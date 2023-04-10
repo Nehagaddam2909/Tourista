@@ -35,6 +35,7 @@ const Navbar = () => {
             <Sidebar
 				showSidebar={sidebarOpen}
 				setshowSidebar={(e) => setsidebarOpen(e)}
+			
 			/>
         <div className='lg:flex hidden justify-center items-center h-full'>
 				<div className='Navbar-links flex whitespace-nowrap lg:space-x-8 font-semibold'>
@@ -51,7 +52,7 @@ const Navbar = () => {
 				<Link
 					href='/register'
 					className='Reach-us hidden lg:block text-white bg-[#FA183E] whitespace-nowrap rounded-2xl py-1 px-5 mx-10'>
-					Enrollment
+					Signup
 				</Link>
 			</div>
     </div>  );

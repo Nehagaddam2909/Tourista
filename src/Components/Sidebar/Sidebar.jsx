@@ -6,7 +6,7 @@ const Sidebar = ({ showSidebar, setshowSidebar }) => {
 			className={`flex flex-col z-50 ${
 				showSidebar ? ' block w-60' : 'hidden'
 			} transition-all duration-500 ease-in-out  fixed top-0 left-0  lg:hidden h-full p-3 bg-white  border-r border-gray-300 shadow-xl`}>
-			<div className='space-y-3'>
+			<div className='space-y-3 '>
 				<div className='flex items-center justify-between'>
 					<h2>Dashboard</h2>
 					<button className='p-2' onClick={() => setshowSidebar(false)}>

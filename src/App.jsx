@@ -3,7 +3,7 @@ import Menu from './Components/Menu'
 function App() {
 
   return (
-    <div className="  ">
+    <div className="">
       <Menu></Menu>
     </div>
   )
